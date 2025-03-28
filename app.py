@@ -6,6 +6,6 @@ app=Flask(__name__)
 def home():
     return "welcome to home"
 
-@app.route('/details')
-def details():
-    return render_template("index.html")
+@app.route('/details/<int:id>/<user>')
+def details(id,user):
+    return render_template("index.html",user_id=id,user_name=user)
